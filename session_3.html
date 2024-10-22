@@ -1,4 +1,5 @@
- 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,7 +72,7 @@
     <link rel="stylesheet" href="static/css/lazy_load.css"/>
     <link rel="stylesheet" href="static/css/typeahead.css"/>
 
-    <title>ISMIR 2024: Fundamental Science in the era of AI</title>
+    <title>ISMIR 2024: Welcome + Navigating the Conference 2</title>
     
 </head>
 
@@ -152,40 +153,42 @@
     <div class="content">
         
 
-<!-- Title -->
 <div class="pp-card m-3" style="">
-    <div class="card-header">
-        <h2 class="card-title main-title text-center" style="">
-            Fundamental Science in the era of AI
-        </h2>
-        <h3 class="card-subtitle mb-2 text-muted text-center">
-            Richard Armstrong, Bruce Bassett, Michelle Lochner, Nadeem Oozeer
-        </h3>
-        <div class="text-center p-3">
-            <a
-                class="card-link"
-                data-toggle="collapse"
-                role="button"
-                href="#details"
-            >
-                Description
-            </a>
-        </div>
+  <div class="card-header">
+    <h2 class="card-title main-title text-left">
+      Welcome + Navigating the Conference 2
+    </h2>
+    <h3 class="card-subtitle mb-2 text-muted text-left">
+      Nick Gang
+    </h3>
+    <div class="text-left" id="start_end">
+        <b>Start: 2024-10-28T21:00:00-07:00 </b> - <b> 2024-10-28T22:00:00-07:00 </b> <br />
     </div>
-</div>
-<div id="details" class="pp-card m-3">
-    <div class="card-body">
-        <div class="card-text">
-            <div id="abstractExample">
-                <span class="font-weight-bold">Abstract:</span>
-                How can AI help deal rigorously with the data deluge of 'big science'? How can AI help amplify the social impact of fundamental science? <br /><br />
+    </div>
+    </div>
+    <div id="details" class="pp-card m-3">
+        <div class="card-body">
+            <div class="card-text">
+                <div id="abstractExample">
+                    <span class="font-weight-bold">Abstract:</span>
+                    Are you new to the ISMIR community and/or conference? Join us to learn more about the field, what’s planned for ISMIR 2024, and how to navigate the conference whether attending in person or online.  <br /><br />
             </div>
         </div>
-        <p></p>
+    <p></p>
     </div>
-</div>
+    </div>
 
-<!-- Presentation Embed -->
+    <script>
+        console.log(moment);
+        const currentTz = moment.tz.guess();
+        console.log(currentTz);
+        const start = moment.tz("2024-10-28T21:00:00-07:00", currentTz);
+        const end = moment.tz("2024-10-28T22:00:00-07:00", currentTz);
+        console.log(start);
+
+        const start_end = document.getElementById("start_end");
+        start_end.innerHTML = `<b> Start: </b> ${start.format('MMMM Do YYYY, h:mm:ss a')}<br/><b> End: </b> ${end.format('MMMM Do YYYY, h:mm:ss a')}` ;
+    </script>
 
 
     </div>
