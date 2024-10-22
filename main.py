@@ -130,6 +130,12 @@ def workshops():
     return render_template("workshops.html", **data)
 
 
+@app.route("/speakers.html")
+def speakers():
+    data = _data()
+    data["speakers"] = site_data["speakers"]
+    return render_template("speakers.html", **data)
+
 def extract_list_field(v, key):
     value = v.get(key, "")
     if isinstance(value, list):

@@ -7,8 +7,7 @@
 {% endblock %}
 
 {% block tabs %}
-{{ components.tabs([("calendar", "Calendar", "active"),
-        ("day", "Pre-conference keynotes", "keynotes")]) }}
+{{ components.tabs([("calendar", "Calendar", "active")])}}
 {% endblock %}
 
 {% block content %}
@@ -34,30 +33,6 @@
 
   </div>
 
-
-
-  <!-- Day Tab -->
-
-  <div
-    class="tab-pane fade"
-    id="tab-day"
-    role="tabpanel"
-    aria-labelledby="nav-profile-tab"
-  >
-    <div id="day">
-      <!-- Speakers -->
-      {{ components.section("Speakers") }}
-      <div class="speakers">
-        {{ components.speakergroup(day.speakers) }}
-      </div>
-      {{ components.section("Highlighted Papers") }}
-      <div class="papers">
-        {{ components.highlightgroup(day.highlighted, 1) }}
-      </div>
-    </div>
-
-
-  </div>
 
   <script type="text/javascript">
     window.onload = () => {

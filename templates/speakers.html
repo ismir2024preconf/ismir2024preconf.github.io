@@ -1,0 +1,15 @@
+{% set active_page = "Speakers" %}
+{% set page_title = "Keynote Speakers" %}
+{% extends "base.html" %}
+
+{% block content %}
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+    <div id="day">
+      <!-- Speakers -->
+      {{ components.section("Keynote Speakers") }}
+      <div class="speakers">
+        {{ components.speakergroup(speakers) }}
+        </div>  
+    </div>
+</div>
+{% endblock %}
