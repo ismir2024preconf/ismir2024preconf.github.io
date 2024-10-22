@@ -96,10 +96,10 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.10/dist/js/bootstrap-select.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
-
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js'></script>
 <script src="static/js/modules/lazyLoad.js"></script>
 <script src="static/js/modules/urlParams.js"></script>
-<script type="text/javascript" src="static/js/views/calendar.js"></script>
+<script type="text/javascript" src="static/js/views/new_calendar.js"></script>
 
 </head>
 
@@ -187,6 +187,23 @@
     <!-- Content -->
     <div class="content">
         
+
+<script type="text/javascript">
+
+  document.addEventListener("DOMContentLoaded", async function() {
+     const events = await API.getPreConf();
+     const calendarEl = document.getElementById("calendar_preconf");
+     console.log(calendarEl);
+     console.log(events);
+     const calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridWeek',
+      events: events,
+      initialDate: "2024-10-28",
+     });
+     calendar.render();
+     lazyLoader();
+   });
+</script>
 <div class="tab-content py-1 px-1 px-sm-0" id="nav-tabContent">
   <!-- Calender tab -->
   <div
@@ -202,38 +219,15 @@
     </div>
 
     <!-- full cal for browser-->
-    <div id="calendar" class="d-none d-sm-block"></div>
+    <!-- <div id="calendar_preconf" class="d-none d-sm-block"></div> -->
+    <div id="calendar_preconf" class="d-sm-block"></div>
 
     <!-- small cal for smart phones-->
-    <div id="calendar_small" class="d-sm-none"></div>
+    <!-- <div id="calendar_small" class="d-sm-none"></div> -->
 
   </div>
 
 
-  <script type="text/javascript">
-    window.onload = () => {
-      const tabPanes = $(".tab-pane");
-      // Create calendars:
-      make_cal(false, "main", ["#calendar", "#calendar_small"]).then(({ render }) => {
-        // render cal with all tabs visible
-        tabPanes.css("display", "block");
-        render();
-        tabPanes.css("display", "");
-
-        // re-render cal on resize
-        $(window).on(
-          "resize",
-          _.debounce(() => {
-            tabPanes.css("display", "block");
-            render();
-            tabPanes.css("display", "");
-          }, 500)
-        );
-      });
-      // ----
-      lazyLoader();
-    };
-  </script>
 </div>
 
     </div>
