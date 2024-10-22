@@ -1,0 +1,27 @@
+{
+  "analytics": "UA-",
+  "background_image": "https://confcats-siteplex.s3.us-east-1.amazonaws.com/ismir24/large_Screenshot_2024_04_15_at_2_13_03_PM_d93a3ac650.png",
+  "calendar": {
+    "colors": {
+      "---": "#bed972",
+      "qa": "#4FCAEB",
+      "special": "#D64045",
+      "talk": "#ccc"
+    },
+    "sunday_saturday": true
+  },
+  "citation_date": "December 2024",
+  "date": "November 2024",
+  "logo": {
+    "height": "auto",
+    "image": "static/images/ismir24_logo.svg",
+    "width": "95px"
+  },
+  "name": "International Society for Music Information Retrieval 2024",
+  "page_title": {
+    "prefix": "ISMIR 2024",
+    "separator": ": "
+  },
+  "proceedings_title": "Proceedings of the International Society for Music Information Retrieval Conference",
+  "tagline": "ISMIR 2024"
+}
