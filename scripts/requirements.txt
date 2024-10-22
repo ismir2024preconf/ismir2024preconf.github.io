@@ -1,5 +1,5 @@
 transformers
 sentence_transformers
-sklearn
+scikit-learn
 torch>=1.4.0
 ics
