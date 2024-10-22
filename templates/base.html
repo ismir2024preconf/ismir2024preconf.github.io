@@ -87,20 +87,18 @@
 <!-- NAV -->
 {% block header %}
 {% set navigation_bar = [
-('index.html', 'Home'),
+('https://ismir2024.ismir.net/', 'Home'),
 ('calendar.html', 'Schedule'),
-('papers.html', 'Papers'),
-('workshops.html', 'Workshops'),
-('chat.html', 'Chat'),
-('help.html', 'Help'),
+('special_sessions.html', 'Special Sessions')
 ] -%}
 
 <nav
-        class="navbar sticky-top navbar-expand-lg navbar-light bg-light mr-auto"
+        class="navbar sticky-top navbar-expand-lg bg-light mr-auto"
         id="main-nav"
 >
     <div class="container">
         <a class="navbar-brand" href="index.html">
+
             <img
                     class="logo" src="{{config.logo.image}}"
                     height={{config.logo.height | default("auto") | tojson}}
@@ -174,7 +172,7 @@
 <footer class="footer bg-light p-4">
     <div class="container">
         <p class="float-right"><a href="#">Back to Top</a></p>
-        <p class="text-center">© 2020 {{config.organization}}</p>
+        <p class="text-center">© 2024 {{config.organization}}</p>
     </div>
 </footer>
 

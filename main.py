@@ -16,7 +16,7 @@ by_uid = {}
 
 def main(site_data_path):
     global site_data, extra_files
-    extra_files = ["README.md"]
+    extra_files = ["README.md", "main.md"]
     # Load all for your sitedata one time.
     for f in glob.glob(site_data_path + "/*"):
         extra_files.append(f)
@@ -28,12 +28,13 @@ def main(site_data_path):
         elif typ == "yml":
             site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
 
-    for typ in ["papers", "speakers", "workshops"]:
+    for typ in ["papers", "speakers", "workshops", "special_sessions"]:
         by_uid[typ] = {}
         for p in site_data[typ]:
             by_uid[typ][p["UID"]] = p
 
     print("Data Successfully Loaded")
+    print("site_data keys: ", site_data.keys())
     return extra_files
 
 
@@ -70,9 +71,17 @@ def favicon():
 @app.route("/index.html")
 def home():
     data = _data()
-    data["readme"] = open("README.md").read()
-    data["committee"] = site_data["committee"]["committee"]
-    return render_template("index.html", **data)
+    data["day"] = {
+        "speakers": site_data["speakers"],
+        # "highlighted": [
+        #     format_paper(by_uid["papers"][h["uid"]])
+        # ],
+    }
+    return render_template("schedule.html", **data)
+    # data = _data()
+    # data["readme"] = open("main.md").read()
+    # data["committee"] = site_data["committee"]["committee"]
+    # return render_template("index.html", **data)
 
 
 @app.route("/help.html")
@@ -100,12 +109,17 @@ def schedule():
     data = _data()
     data["day"] = {
         "speakers": site_data["speakers"],
-        "highlighted": [
-            format_paper(by_uid["papers"][h["UID"]]) for h in site_data["highlighted"]
-        ],
+        # "highlighted": [
+        #     format_paper(by_uid["papers"][h["uid"]])
+        # ],
     }
     return render_template("schedule.html", **data)
 
+@app.route("/special_sessions.html")
+def special_sessions():
+    data = _data()
+    data["special_sessions"] = site_data["special_sessions"]
+    return render_template("special_sessions.html", **data)
 
 @app.route("/workshops.html")
 def workshops():
@@ -141,7 +155,7 @@ def format_paper(v):
         "recs": [],
         "sessions": list_fields["sessions"],
         # links to external content per poster
-        "pdf_url": v.get("pdf_url", ""),  # render poster from this PDF
+        "pdf_url": v.get("paper_link", ""),  # render poster from this PDF
         "code_link": "https://github.com/Mini-Conf/Mini-Conf",  # link to code
         "link": "https://arxiv.org/abs/2007.12238",  # link to paper
     }
@@ -181,6 +195,14 @@ def speaker(speaker):
     data["speaker"] = v
     return render_template("speaker.html", **data)
 
+@app.route("/special_session_<session>.html")
+def special_session(session):
+    uid = session
+    v = by_uid["special_sessions"][uid]
+    data = _data()
+    data["session"] = v
+    return render_template("special_session.html", **data)
+
 
 @app.route("/workshop_<workshop>.html")
 def workshop(workshop):
@@ -215,6 +237,7 @@ def send_static(path):
 
 @app.route("/serve_<path>.json")
 def serve(path):
+    print("path, ", path)
     return jsonify(site_data[path])
 
 

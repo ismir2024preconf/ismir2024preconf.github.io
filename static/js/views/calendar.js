@@ -1,6 +1,7 @@
-async function make_cal(handleResize = true) {
+async function make_cal(handleResize = true, calendarName="main", divNames=["#calendar", "#calendar_small"]) {
 
   const current_tz = getUrlParameter("tz") || moment.tz.guess();
+  console.log(current_tz, "--- current_tz");
   const tzNames = [...moment.tz.names()];
 
   const setupTZSelector = () => {
@@ -43,15 +44,21 @@ async function make_cal(handleResize = true) {
     dates.push(lastDate);
     return dates;
   };
-
+  
   const config = await API.getConfig();
-  const events = await API.getCalendar();
+  var events; 
+  events = await API.getCalendar();
+  const pre_conf_events = await API.getPreConf();
+
+  //merge pre_conf_events into events
+  events = events.concat(pre_conf_events);
 
   const all_cals = [];
   const timezoneName = current_tz;
 
   // determine min date
   const min_date = d3.min(events.map((e) => e.start));
+  console.log(min_date, "--- min_date");
   let min_hours =
     d3.min(events.map((e) => moment(e.start).tz(timezoneName).hours())) - 1;
   let max_hours =
@@ -62,7 +69,7 @@ async function make_cal(handleResize = true) {
   }
 
   const {Calendar} = tui;
-  const calendar = new Calendar("#calendar", {
+  const calendar = new Calendar(divNames[0], {
     defaultView: "week",
     isReadOnly: true,
     // useDetailPopup: true,
@@ -70,7 +77,7 @@ async function make_cal(handleResize = true) {
     scheduleView: ["time"],
     usageStatistics: false,
     week: {
-      workweek: !config.calendar.sunday_saturday,
+      workweek: false,
       hourStart: min_hours,
       hourEnd: max_hours,
     },
@@ -138,7 +145,7 @@ async function make_cal(handleResize = true) {
     calendar.getDateRangeEnd().toDate()
   );
 
-  const c_sm = d3.select("#calendar_small");
+  const c_sm = d3.select(divNames[1]);
   let i = 0;
   for (const day of week_dates) {
     c_sm.append("div").attr("id", `cal__${i}`);

@@ -15,6 +15,10 @@ class API {
     return $.get("serve_main_calendar.json");
   }
 
+  static getPreConf(){ 
+    return $.get("serve_pre_conf.json")
+  }
+
   static getPapers() {
     if (API.paperCache == null) {
       API.paperCache = $.get("papers.json");
