@@ -1,5 +1,0 @@
-transformers
-sentence_transformers
-scikit-learn
-torch>=1.4.0
-ics
