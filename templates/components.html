@@ -226,10 +226,10 @@ section.QA %}
                 class="card-header text-left"
                 style="min-height: 200px; width: 100%"
             >
-                <a class="text-muted" href="special_session_{{session.id}}.html">
+                <a class="text-muted" href="/special_session_{{session.uid}}.html">
                     <h3 class="card-title main-title">{{session.title}}</h3>
                 </a>
-                
+
                 <div class="card-subtitle text-muted">
                     {{ session.speakers }}
                 </div>
@@ -238,8 +238,12 @@ section.QA %}
                 </div>
             </div>
         </div>
+        <script> 
+        console.log({{session}})
+        </script>
     </div>
     {% endfor %}
+
 </div>
 {%- endmacro %}
 
