@@ -25,6 +25,9 @@
       initialDate: "2024-10-28",
      });
      calendar.render();
+     // update localTime with timezone
+      const localTime = document.getElementById("localTime");
+      localTime.innerHTML = moment.tz.guess();
      lazyLoader();
    });
 </script>
@@ -36,15 +39,18 @@
     role="tabpanel"
     aria-labelledby="nav-profile-tab"
   >
-    <div class="form-group col">
+    <!-- <div class="form-group col">
       <label for="tzOptions">Timezone:</label>
       <select id="tzOptions" class="selectpicker" data-live-search="true">
       </select>
-    </div>
+    </div> -->
 
     <!-- full cal for browser-->
     <!-- <div id="calendar_preconf" class="d-none d-sm-block"></div> -->
     <div id="calendar_preconf" class="d-sm-block"></div>
+
+    <br/> 
+    <p> Times are shown in your local timezone: <span id="localTime"></span></p>
 
     <!-- small cal for smart phones-->
     <!-- <div id="calendar_small" class="d-sm-none"></div> -->

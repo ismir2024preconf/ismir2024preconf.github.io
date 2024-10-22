@@ -1,0 +1,17 @@
+{% set active_page = "Sessions" %}
+{% set page_title = "Sessions" %}
+{% extends "base.html" %}
+
+
+{% block content %}
+<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+  <div id="day">
+    <!-- Special Sessions -->
+    {{ components.section("Sessions") }}
+    <div class="speakers">
+      {{ components.sessiongroup(sessions) }}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

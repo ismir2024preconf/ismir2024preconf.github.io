@@ -1,19 +1,28 @@
 [
   {
+    "title": "Welcome + Navigating 1",
+    "start": "2024-10-28T09:00:00-07:00",
+    "end": "2024-10-28T10:00:00-07:00",
+    "location": "",
+    "url": "/session_1.html",
+    "category": "time",
+    "calendarId": "qa"
+  },
+  {
     "title": "Keynote 1 - Eduardo Miranda",
     "start": "2024-10-28T10:00:00-07:00",
     "end": "2024-10-28T11:00:00-07:00",
     "location": "",
     "url": "/speaker_1.html",
     "category": "time",
-    "calendarId": "talk"
+    "calendarId": "qa"
   },
   {
     "title": "Music 1",
     "start": "2024-10-28T11:00:00-07:00",
     "end": "2024-10-28T13:00:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/session_2.html",
     "category": "time",
     "calendarId": "qa"
   },
@@ -22,7 +31,7 @@
     "start": "2024-10-28T21:00:00-07:00",
     "end": "2024-10-28T22:00:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/session_3.html",
     "category": "time",
     "calendarId": "qa"
   },
@@ -31,25 +40,34 @@
     "start": "2024-10-28T22:00:00-07:00",
     "end": "2024-10-28T22:30:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/special_session_1.html",
     "category": "time",
-    "calendarId": "special"
+    "calendarId": "qa"
   },
   {
     "title": "Special session: WiMIR Mentoring Program",
     "start": "2024-10-28T22:30:00-07:00",
     "end": "2024-10-28T23:00:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/special_session_2.html",
     "category": "time",
-    "calendarId": "special"
+    "calendarId": "qa"
   },
   {
     "title": "Music 2",
     "start": "2024-10-28T23:00:00-07:00",
     "end": "2024-10-28T01:00:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/session_4.html",
+    "category": "time",
+    "calendarId": "qa"
+  },
+  {
+    "title": "Unconference",
+    "start": "2024-10-29T11:00:00-07:00",
+    "end": "2024-10-29T12:00:00-07:00",
+    "location": "",
+    "url": "/session_5.html",
     "category": "time",
     "calendarId": "qa"
   },
@@ -58,62 +76,62 @@
     "start": "2024-10-29T13:00:00-07:00",
     "end": "2024-10-29T13:30:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/special_session_3.html",
     "category": "time",
-    "calendarId": "special"
+    "calendarId": "qa"
   },
   {
     "title": "Special session: ISMIR Open Review Group",
     "start": "2024-10-29T13:30:00-07:00",
     "end": "2024-10-29T14:00:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/special_session_4.html",
     "category": "time",
-    "calendarId": "special"
+    "calendarId": "qa"
   },
   {
     "title": "Special session: DEI / Growing the \"I\"",
     "start": "2024-10-29T14:00:00-07:00",
     "end": "2024-10-29T14:45:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/special_session_5.html",
     "category": "time",
-    "calendarId": "special"
+    "calendarId": "qa"
   },
   {
     "title": "Ideation sessions",
     "start": "2024-10-29T23:00:00-07:00",
     "end": "2024-10-29T01:00:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/session_6.html",
     "category": "time",
     "calendarId": "qa"
   },
   {
     "title": "Keynote 2 - Emilia G\u00f3mez",
-    "start": "2024-10-30T01:00:00-07:00",
-    "end": "2024-10-30T02:00:00-07:00",
+    "start": "2024-10-29T01:00:00-07:00",
+    "end": "2024-10-29T02:00:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/speaker_2.html",
     "category": "time",
     "calendarId": "qa"
   },
   {
     "title": "Special session: New-to-ISMIR Paper Mentoring Program",
-    "start": "2024-10-30T02:00:00-07:00",
-    "end": "2024-10-30T02:30:00-07:00",
+    "start": "2024-10-29T02:00:00-07:00",
+    "end": "2024-10-29T02:30:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/special_session_6.html",
     "category": "time",
-    "calendarId": "special"
+    "calendarId": "qa"
   },
   {
     "title": "Special session: ISMIR Ethics Working Group",
-    "start": "2024-10-30T02:30:00-07:00",
-    "end": "2024-10-30T03:00:00-07:00",
+    "start": "2024-10-29T02:30:00-07:00",
+    "end": "2024-10-29T03:00:00-07:00",
     "location": "",
-    "link": "",
+    "url": "/special_session_7.html",
     "category": "time",
-    "calendarId": "special"
+    "calendarId": "qa"
   }
 ]

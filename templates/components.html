@@ -231,7 +231,7 @@ section.QA %}
                 </a>
 
                 <div class="card-subtitle text-muted">
-                    {{ session.speakers }}
+                    {{ session.presenters }}
                 </div>
                 <div class="ml-2 mt-2 text-left card-subtitle font-italic">
                     {{session.abstract }}
@@ -240,7 +240,33 @@ section.QA %}
         </div>
     </div>
     {% endfor %}
-
 </div>
+
 {%- endmacro %}
 
+{% macro sessiongroup(sessions) -%}
+<div class="cards row">
+    {% for session in sessions %}
+    <div class="col-md-6 col-sm-12 p-3" style="box-sizing: border-box">
+        <div class="card" style="display: block; overflow: hidden; width: 100%">
+            <div
+                class="card-header text-left"
+                style="min-height: 200px; width: 100%"
+            >
+                <a class="text-muted" href="/session_{{session.UID}}.html">
+                    <h3 class="card-title
+                    main-title">{{session.title}}</h3>
+                </a>
+
+                <div class="card-subtitle text-muted">
+                    {{ session.presenters }}
+                </div>
+                <div class="ml-2 mt-2 text-left card-subtitle font-italic">
+                    {{session.abstract }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{%- endmacro %}

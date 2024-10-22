@@ -28,7 +28,7 @@ def main(site_data_path):
         elif typ == "yml":
             site_data[name] = yaml.load(open(f).read(), Loader=yaml.SafeLoader)
 
-    for typ in ["papers", "speakers", "workshops", "special_sessions"]:
+    for typ in ["papers", "speakers", "workshops", "special_sessions", "sessions"]:
         by_uid[typ] = {}
         for p in site_data[typ]:
             by_uid[typ][p["UID"]] = p
@@ -224,6 +224,21 @@ def chat():
     data = _data()
     return render_template("chat.html", **data)
 
+@app.route("/session_<session>.html")
+def session(session):
+    uid = session
+    v = by_uid["sessions"][uid]
+    data = _data()
+    data["session"] = v
+    return render_template("session.html", **data)
+
+@app.route("/sessions.html")
+def sessions():
+    data = _data()
+    data["sessions"] = site_data["sessions"]
+    return render_template("sessions.html", **data)
+
+
 
 # FRONT END SERVING
 
@@ -261,6 +276,8 @@ def generator():
         yield "workshop", {"workshop": str(workshop["UID"])}
     for session in site_data["special_sessions"]:
         yield "special_session", {"session": str(session["UID"])}
+    for session in site_data["sessions"]:
+        yield "session", {"session": str(session["UID"])}
 
     for key in site_data:
         yield "serve", {"path": key}
