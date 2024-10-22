@@ -101,7 +101,7 @@
   {
     "calendarId": "qa",
     "category": "time",
-    "end": "2024-10-29T01:00:00-07:00",
+    "end": "2024-10-30T01:00:00-07:00",
     "location": "",
     "start": "2024-10-29T23:00:00-07:00",
     "title": "Ideation sessions",
@@ -110,27 +110,27 @@
   {
     "calendarId": "qa",
     "category": "time",
-    "end": "2024-10-29T02:00:00-07:00",
+    "end": "2024-10-30T02:00:00-07:00",
     "location": "",
-    "start": "2024-10-29T01:00:00-07:00",
+    "start": "2024-10-30T01:00:00-07:00",
     "title": "Keynote 2 - Emilia G\u00f3mez",
     "url": "/speaker_2.html"
   },
   {
     "calendarId": "qa",
     "category": "time",
-    "end": "2024-10-29T02:30:00-07:00",
+    "end": "2024-10-30T02:30:00-07:00",
     "location": "",
-    "start": "2024-10-29T02:00:00-07:00",
+    "start": "2024-10-30T02:00:00-07:00",
     "title": "Special session: New-to-ISMIR Paper Mentoring Program",
     "url": "/special_session_6.html"
   },
   {
     "calendarId": "qa",
     "category": "time",
-    "end": "2024-10-29T03:00:00-07:00",
+    "end": "2024-10-30T03:00:00-07:00",
     "location": "",
-    "start": "2024-10-29T02:30:00-07:00",
+    "start": "2024-10-30T02:30:00-07:00",
     "title": "Special session: ISMIR Ethics Working Group",
     "url": "/special_session_7.html"
   }
