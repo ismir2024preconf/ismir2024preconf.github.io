@@ -6,9 +6,9 @@
 {% include 'schedule_head.html' %}
 {% endblock %}
 
-{% block tabs %}
+<!-- {% block tabs %}
 {{ components.tabs([("calendar", "Calendar", "active")])}}
-{% endblock %}
+{% endblock %} -->
 
 {% block content %}
 
@@ -20,8 +20,15 @@
      console.log(calendarEl);
      console.log(events);
      const calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridWeek',
+      initialView: 'timeGridPreConf',
       events: events,
+      views: { 
+        timeGridPreConf: { 
+          type: 'timeGrid', 
+          duration: { days: 3 },
+          buttonText: 'Pre-Conference'
+        }
+      },
       initialDate: "2024-10-28",
      });
      calendar.render();
@@ -33,12 +40,12 @@
 </script>
 <div class="tab-content py-1 px-1 px-sm-0" id="nav-tabContent">
   <!-- Calender tab -->
-  <div
+  <!-- <div
     class="tab-pane active"
     id="tab-calendar"
     role="tabpanel"
     aria-labelledby="nav-profile-tab"
-  >
+  > -->
     <!-- <div class="form-group col">
       <label for="tzOptions">Timezone:</label>
       <select id="tzOptions" class="selectpicker" data-live-search="true">

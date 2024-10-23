@@ -320,4 +320,4 @@ if __name__ == "__main__":
         if os.getenv("FLASK_DEBUG") == "True":
             debug_val = True
 
-        app.run(port=5000, debug=debug_val, extra_files=extra_files)
+        app.run(port=5050, debug=debug_val, extra_files=extra_files)
